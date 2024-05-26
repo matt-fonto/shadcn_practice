@@ -10,5 +10,8 @@ export async function getCharacters(): Promise<
     throw new Error("Failed to fetch characters");
   }
 
+  // Simulate a slow network
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   return response.json();
 }
